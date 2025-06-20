@@ -1,4 +1,13 @@
 {
-  "welcome": "Welcome 😊 sada",
-  "home": "Home"
+  "welcome": "Welcome 😊  ميناااااااااا",
+  "home": "Home",
+  "sign_in": "يناااااااااا",
+  "enter_details": "Please enter your login details below to access your client area.",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "continue": "Continue",
+  "forgot_password": "Forgot password?",
+  "no_account": "Do not have an Account yet?",
+  "register": "Register"
 }

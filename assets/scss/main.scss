@@ -1,7 +1,14 @@
-$primary: #007bff;
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa;
-  color: $primary;
+
+
+[dir="rtl"] .form-box__button i,
+[dir="rtl"] .register__button i {
+  transform: rotate(180deg);
+  margin-right: 8px;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .navbar__container,
+[dir="rtl"] .footer__container {
+  direction: rtl;
 }
