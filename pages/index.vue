@@ -1,24 +1,41 @@
 <script setup>
-definePageMeta({
-  layout: 'default' // optional
-})
+ 
+const { locale } = useI18n()
+const router = useRouter()
+
+// onMounted(() => {
+//   router.replace(`/${locale.value}/login`)
+// })
 </script>
+
 <template>
-  <div>
-    <h1>Welcome to My App</h1>
-    <p>This is the homepage.</p>
-    <h1>{{ $t('welcome') }}</h1>
-    <h1 class="main__title">{{ $t('sign_in') }}</h1>
-<p class="main__subtitle">{{ $t('enter_details') }}</p>
-
-<!-- In form -->
-<label class="form-box__label">{{ $t('email') }}</label>
-<label class="form-box__label">{{ $t('password') }}</label>
-<button class="form-box__button">{{ $t('continue') }}</button>
-<p class="form-box__link">{{ $t('forgot_password') }}</p>
-
-<!-- Register section -->
-<p>{{ $t('no_account') }}</p>
-<a class="register__button">{{ $t('register') }}</a>
-  </div>
+  
+   === <h1 class="main__title">{{ $t('sign_in') }}</h1>  ===
+    
 </template>
+
+<style>
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0f0f1c;
+  color: #fff;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(143, 59, 253, 0.3);
+  border-radius: 50%;
+  border-top-color: #8f3bfd;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+</style>
