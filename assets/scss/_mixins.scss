@@ -1,0 +1,10 @@
+//Gradients
+@mixin gradient1() {
+  background: linear-gradient(to right, #95CD39 0%, #6DBD45 100%);
+}
+@mixin gradient2() {
+  background: linear-gradient(to right, #95CD39 0%, #CBDB2A 100%);
+}
+@mixin gradient3() {
+  background: linear-gradient(90deg, #6DBD45 19.27%, #95CD39 100%);
+}

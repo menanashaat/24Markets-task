@@ -10,7 +10,7 @@ const router = useRouter()
 
 <template>
   
-   === <h1 class="main__title">{{ $t('sign_in') }}</h1>  ===
+   <!-- === <h1 class="main__title">{{ $t('sign_in') }}</h1>  === -->
     
 </template>
 

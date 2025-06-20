@@ -1,5 +1,17 @@
+// main.scss
+@import "./variables";
+@import "./colors";
+@import "./typography";
+@import "./components/button";
+@import './components/dropdown';
 
+body {
+  font-family: "Wix Madefor Display", sans-serif;
+}
 
+.handwritten {
+  font-family: "Caveat", cursive;
+}
 
 [dir="rtl"] .form-box__button i,
 [dir="rtl"] .register__button i {
@@ -11,4 +23,83 @@
 [dir="rtl"] .navbar__container,
 [dir="rtl"] .footer__container {
   direction: rtl;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.center-v {
+  align-items: center;
+}
+
+.center-h {
+  justify-content: center;
+}
+
+.start {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.start-v {
+  align-items: flex-start;
+}
+
+.start-h {
+  justify-content: flex-start;
+}
+
+.end {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.end-v {
+  align-items: flex-end;
+}
+
+.end-h {
+  justify-content: flex-end;
+}
+
+.gap-2 {
+  gap: 2px;
+}
+
+.gap-3 {
+  gap: 3px;
+}
+
+.gap-4 {
+  gap: 4px;
+}
+
+.gap-6 {
+  gap: 6px;
+}
+
+.gap-8 {
+  gap: 8px;
 }

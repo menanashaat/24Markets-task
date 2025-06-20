@@ -5,10 +5,10 @@ const { locale } = useI18n();
 </script>
 
 <template>
- <div :dir="locale === 'ar' ? 'rtl' : 'ltr'"> {{locale}}================
+ <div :dir="locale === 'ar' ? 'rtl' : 'ltr'"> 
     <Header /> 
     <slot />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 <style>
