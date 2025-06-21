@@ -8,7 +8,7 @@ const { locale } = useI18n();
  <div :dir="locale === 'ar' ? 'rtl' : 'ltr'"> 
     <Header /> 
     <slot />
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 <style>
