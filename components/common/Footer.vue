@@ -123,7 +123,7 @@
 
 .footer {
   background-color: $color-black;
-  padding: 4rem 1.25rem; // py-16 px-5
+  padding: 4rem 1.25rem; 
 
   &__container {
     max-width: 1200px;

@@ -1,5 +1,5 @@
 <script setup>
- 
+ import Login from '../components/Login.vue'
 const { locale } = useI18n()
 const router = useRouter()
 
@@ -10,7 +10,7 @@ const router = useRouter()
 
 <template>
   
-   <!-- === <h1 class="main__title">{{ $t('sign_in') }}</h1>  === -->
+   <Login />
     
 </template>
 

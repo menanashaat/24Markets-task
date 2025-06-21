@@ -12,13 +12,6 @@ const { locale } = useI18n();
   </div>
 </template>
 <style>
-/* Global CSS from your HTML */
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0f0f1c; 
-  color: #fff;
-}
 
 /* Add RTL support */
 [dir="rtl"] .form-box__button i,

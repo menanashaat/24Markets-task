@@ -7,22 +7,22 @@
         <i class="fas fa-bars"></i>
       </label>
       <div class="navbar__links navbar__links--background" :class="{ 'is-open': isMobileMenuOpen }">
-        <NuxtLink class="navbar__link" :to="switchLocalePath('home')"
+        <NuxtLink class="navbar__link" to="/home"
           >home</NuxtLink
         >
-        <NuxtLink class="navbar__link" :to="switchLocalePath('home')"
+        <NuxtLink class="navbar__link"
           >Tearms of Use</NuxtLink
         >
-        <NuxtLink class="navbar__link" :to="switchLocalePath('about-us')"
+        <NuxtLink class="navbar__link" 
           >About Us</NuxtLink
         >
-        <NuxtLink class="navbar__link" :to="switchLocalePath('Education')"
+        <NuxtLink class="navbar__link" 
           >Education</NuxtLink
         >
-        <NuxtLink class="navbar__link" :to="switchLocalePath('Partners')"
+        <NuxtLink class="navbar__link" 
           >Partners</NuxtLink
         >
-        <NuxtLink class="navbar__link" :to="switchLocalePath('FAQ')"
+        <NuxtLink class="navbar__link" 
           >FAQ</NuxtLink
         >
       </div>
@@ -56,11 +56,11 @@
         <NuxtLink 
           class="navbar__link btn btn--default"
           
-          :to="switchLocalePath('Partners')"
+          to="/"
           >Login</NuxtLink>
         <NuxtLink
           class="navbar__link btn btn--info"
-          :to="switchLocalePath('Partners')"
+          to="/"
           >Register</NuxtLink
         >
       </div>
@@ -143,10 +143,13 @@ const updateLanguage = async () => {
 
 .navbar {
   background-color: $color-background;
-  padding: $padding-base;
+  position: fixed;
+      z-index: 2;
+  width: 100%;
+      padding: 20px 0;
 
   &__container {
-    margin: 0 20px;
+    margin: 0 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;

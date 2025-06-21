@@ -3,10 +3,25 @@
 @import "./colors";
 @import "./typography";
 @import "./components/button";
-@import './components/dropdown';
+@import "./components/dropdown";
 
 body {
   font-family: "Wix Madefor Display", sans-serif;
+  background-color: $color-black;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/white-and-grey-wave.png");
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.1; 
+  z-index: -1;
 }
 
 .handwritten {
@@ -23,6 +38,10 @@ body {
 [dir="rtl"] .navbar__container,
 [dir="rtl"] .footer__container {
   direction: rtl;
+}
+
+.container {
+  padding-top: 8rem;
 }
 
 .horizontal {
@@ -103,7 +122,6 @@ body {
 .gap-8 {
   gap: 8px;
 }
-.gap-10{
+.gap-10 {
   gap: 10px;
 }
-

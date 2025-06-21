@@ -1,0 +1,287 @@
+<script setup lang="ts">
+import BasePageHeader from "../components/common/BasePageHeader.vue";
+import Card from "../components/common/Card.vue";
+
+const showPassword = ref(false);
+</script>
+
+<template>
+  <div class="container">
+    <BasePageHeader
+      title="Sign in to your account"
+      subtitle="Please enter your login details below to access your client area."
+    />
+    <div class="login">
+      <!-- login -->
+      <Card>
+        <h2 class="login__title">Login</h2>
+        <form class="login__form">
+          <div class="login__field">
+            <div class="login__group">
+              <label for="email" class="login__label">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                required
+                class="login__input"
+                placeholder="example@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="login__field">
+            <div class="login__group">
+              <span class="login__label">Password</span>
+              <input
+                id="password"
+                :type="showPassword ? 'text' : 'password'"
+                name="password"
+                required
+                class="login__input"
+                placeholder="•••••••••••••"
+              />
+              <button
+                type="button"
+                class="login__toggle-password"
+                @click="showPassword = !showPassword"
+              >
+                <!-- Show and hide Password -->
+                <i
+                  :class="
+                    showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'
+                  "
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="login__actions">
+            <button type="button" class="login__submit">
+              <span class="login__submit-text">Continue</span>
+              <i class="fa-solid fa-arrow-right login__submit-icon"></i>
+            </button>
+          </div>
+
+          <div class="login__forgot">
+            <NuxtLink
+              class="login__forgot-link"
+            >
+              Forgot password?
+            </NuxtLink>
+          </div>
+        </form>
+      </Card>
+      <!-- register -->
+      <Card>
+        <div class="login__prompt">
+          <h2 class="login__prompt-title">Do not have an Account yet?</h2>
+          <div class="login__prompt-action">
+            <NuxtLink to="" class="login__register-link"> Register </NuxtLink>
+            <i class="fa-solid fa-arrow-right login__register-icon"></i>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+@import "../assets/scss/variables";
+@import "../assets/scss/colors";
+@import "../assets/scss/mixins";
+// SCSS for Login Form using BEM
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 20px;
+  margin: 1rem;
+
+  &__title {
+    font-size: 2.25rem; // text-4xl
+    font-weight: bold;
+    letter-spacing: -0.015em;
+    color: $color-white;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__group {
+    display: flex;
+    background-color: #0c0d0f;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    padding: 0.5rem;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    padding: 0.55rem 1.25rem;
+    width: 120px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-white;
+    background-color: #0c0d0f;
+    border-right: 1px solid rgba(66, 66, 66, 0.5);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+  }
+
+  &__input {
+    flex: 1;
+    background-color: #0c0d0f;
+    border: none;
+    border-left: none;
+    color: $color-white;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    outline: none;
+
+    &::placeholder {
+      color: #6b7280; // Tailwind gray-500
+    }
+  }
+
+  &__toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #d1d5db; // hover:text-gray-300
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__submit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $color-white;
+    background-color: #53216e42;
+    border: 1px solid #8000ff;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 0 30px -5px #8b5cf61a, 0 0 15px -3px #a855f71a,
+      inset 0 0 40px #8000ff1a, inset 0 0 20px #8b5cf61a,
+      inset 0 0 60px #8000ff1a;
+
+    &:hover {
+      background-color: #a64dff45;
+      border-color: #a64dff;
+    }
+  }
+
+  &__submit-text {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  &__submit-icon {
+    @include icon-position;
+  }
+
+  &__forgot {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__forgot-link {
+    font-size: 0.875rem;
+    color: $color-white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #d1d5db;
+    }
+  }
+  //  register
+  &__prompt {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__prompt-title {
+    color: $color-white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__prompt-action {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+    border-radius: 1rem;
+    padding: 0.75rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      background-color: rgba(31, 41, 55, 0.3);
+      border-color: rgba(156, 163, 175, 0.5);
+    }
+  }
+
+  &__register-link {
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+  &__register-icon {
+    @include icon-position;
+  }
+}
+</style>

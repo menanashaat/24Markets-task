@@ -8,3 +8,13 @@
 @mixin gradient3() {
   background: linear-gradient(90deg, #6DBD45 19.27%, #95CD39 100%);
 }
+
+@mixin icon-position {
+  position: absolute;
+  right: 0.75rem;
+  top: 30%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.4rem;
+  color: #6d6675;
+}
