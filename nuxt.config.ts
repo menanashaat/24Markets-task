@@ -7,8 +7,8 @@ export default defineNuxtConfig({
     locales: [
       { code: "en", language: "en-US", file: "en.json" },
       { code: "ar", language: "ar-AR", file: "ar.json", dir: "rtl" },
-       { code: "it", language: "it-IT", file: "it.json" },
-        { code: "es", language: "se-IT", file: "es.json" },
+      { code: "it", language: "it-IT", file: "it.json" },
+      { code: "es", language: "se-IT", file: "es.json" },
     ],
     defaultLocale: "en",
     lazy: true,
@@ -28,17 +28,11 @@ export default defineNuxtConfig({
   dir: {
     middleware: "middleware",
   },
+  ssr: true,
   nitro: {
-    preset: 'node-server',
-    storage: {
-      data: { driver: 'memory' }
-    }
+    preset: "vercel",
   },
-  runtimeConfig: {
-    public: {
-      testIp: process.env.TEST_IP || '156.221.11.19' // Egypt IP
-    }
-  },
+
   app: {
     head: {
       meta: [
