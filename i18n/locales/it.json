@@ -20,7 +20,8 @@
     "continue_button": "Continua",
     "forgot_password": "Password dimenticata?",
     "no_account_title": "Non hai ancora un account?",
-    "register_link": "Registrati"
+    "register_link": "Registrati",
+    "loading":"caricamento"
   },
   "footer": {
     "follow_us": "Seguici:",

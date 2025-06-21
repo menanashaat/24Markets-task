@@ -2,7 +2,34 @@
 import BasePageHeader from "../components/common/BasePageHeader.vue";
 import Card from "../components/common/Card.vue";
 
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useSSOLogin } from "~/composables/useSSOLogin";
+
+const email = ref("");
+const password = ref("");
 const showPassword = ref(false);
+const errorMessage = ref("");
+const loading = ref(false);
+
+const router = useRouter();
+
+const handleLogin = async () => {
+  errorMessage.value = "";
+  loading.value = true;
+
+  const result = await useSSOLogin(email.value, password.value);
+
+  loading.value = false;
+
+  if (result) {
+    // Optional: Store token or session
+    router.push("/home"); 
+  } else {
+    errorMessage.value = "Invalid credentials or server error.";
+  }
+};
+
 </script>
 
 <template>
@@ -14,13 +41,16 @@ const showPassword = ref(false);
     <div class="login">
       <!-- login -->
       <Card>
-        <h2 class="login__title">{{ $t('login.title') }}</h2>
-        <form class="login__form">
+        <h2 class="login__title">{{ $t("login.title") }}</h2>
+        <form class="login__form" @submit.prevent="handleLogin">
           <div class="login__field">
             <div class="login__group">
-              <label for="email" class="login__label">{{ $t('login.email_label') }}</label>
+              <label for="email" class="login__label">{{
+                $t("login.email_label")
+              }}</label>
               <input
                 id="email"
+                v-model="email"
                 type="email"
                 name="email"
                 required
@@ -32,9 +62,10 @@ const showPassword = ref(false);
 
           <div class="login__field">
             <div class="login__group">
-              <span class="login__label">{{ $t('login.password_label') }}</span>
+              <span class="login__label">{{ $t("login.password_label") }}</span>
               <input
                 id="password"
+                v-model="password"
                 :type="showPassword ? 'text' : 'password'"
                 name="password"
                 required
@@ -47,34 +78,43 @@ const showPassword = ref(false);
                 @click="showPassword = !showPassword"
               >
                 <i
-                  :class="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
+                  :class="
+                    showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'
+                  "
                 ></i>
               </button>
             </div>
           </div>
 
           <div class="login__actions">
-            <button type="button" class="login__submit">
-              <span class="login__submit-text">{{ $t('login.continue_button') }}</span>
+            <button type="submit" class="login__submit" :disabled="loading">
+              <span class="login__submit-text">
+                {{
+                  loading ? $t("login.loading") : $t("login.continue_button")
+                }}
+              </span>
               <i class="fa-solid fa-arrow-right login__submit-icon"></i>
             </button>
           </div>
 
           <div class="login__forgot">
             <NuxtLink class="login__forgot-link">
-              {{ $t('login.forgot_password') }}
-            </NuxtLink>
+              {{ $t("login.forgot_password") }}
+            </NuxtLink> 
           </div>
+          <p v-if="errorMessage" class="login__error">{{ errorMessage }}</p>
         </form>
       </Card>
 
       <!-- register -->
       <Card>
         <div class="login__prompt">
-          <h2 class="login__prompt-title">{{ $t('login.no_account_title') }}</h2>
+          <h2 class="login__prompt-title">
+            {{ $t("login.no_account_title") }}
+          </h2>
           <div class="login__prompt-action">
             <NuxtLink to="" class="login__register-link">
-              {{ $t('login.register_link') }}
+              {{ $t("login.register_link") }}
             </NuxtLink>
             <i class="fa-solid fa-arrow-right login__register-icon"></i>
           </div>
@@ -83,7 +123,6 @@ const showPassword = ref(false);
     </div>
   </div>
 </template>
-
 
 <style lang="scss">
 @import "../assets/scss/variables";
@@ -101,8 +140,14 @@ const showPassword = ref(false);
   gap: 20px;
   margin: 1rem;
 
+  &__error{ 
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
+
   &__title {
-    font-size: 2.25rem; 
+    font-size: 2.25rem;
     font-weight: bold;
     letter-spacing: -0.015em;
     color: $color-white;

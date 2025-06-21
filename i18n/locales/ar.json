@@ -20,7 +20,8 @@
     "continue_button": "متابعة",
     "forgot_password": "هل نسيت كلمة المرور؟",
     "no_account_title": "لا تمتلك حسابًا بعد؟",
-    "register_link": "إنشاء حساب"
+    "register_link": "إنشاء حساب",
+    "loading":"جارٍ التحميل"
   },
   "footer": {
     "follow_us": "تابعنا:",
