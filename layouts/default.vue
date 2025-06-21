@@ -7,8 +7,8 @@ const { locale } = useI18n();
 <template>
   <div :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     <Header />
-    <slot />
-    <Footer />
+        <NuxtPage />
+    <Footer /> 
   </div>
 </template>
 <style>

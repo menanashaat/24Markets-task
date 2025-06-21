@@ -16,17 +16,28 @@ export default defineNuxtConfig({
     // vueI18n: "en",
     strategy: "prefix",
     vueI18n: "./i18n.config.ts",
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: "i18n_redirected",
-      alwaysRedirect: true,
-      fallbackLocale: "en",
-    },
+    // detectBrowserLanguage: {
+    //   useCookie: true,
+    //   cookieKey: "i18n_redirected",
+    //   alwaysRedirect: true,
+    //   fallbackLocale: "en",
+    // },
   },
 
   srcDir: "./",
   dir: {
     middleware: "middleware",
+  },
+  nitro: {
+    preset: 'node-server',
+    storage: {
+      data: { driver: 'memory' }
+    }
+  },
+  runtimeConfig: {
+    public: {
+      testIp: process.env.TEST_IP || '156.221.11.19' // Egypt IP
+    }
   },
   app: {
     head: {

@@ -14,7 +14,7 @@
         class="navbar__links navbar__links--background"
         :class="{ 'is-open': isMobileMenuOpen }"
       >
-        <NuxtLink class="navbar__link" to="/home">{{
+        <NuxtLink class="navbar__link" :to="localePath('/home')">{{
           $t("navbar.home")
         }}</NuxtLink>
         <NuxtLink class="navbar__link">{{
@@ -73,6 +73,8 @@ import { useRouter } from "vue-router";
 const { locale } = useI18n();
 const router = useRouter();
 const switchLocalePath = useSwitchLocalePath();
+const localePath = useLocalePath()
+
 
 // Use a ref for the current locale
 const currentLocale = ref(locale.value);

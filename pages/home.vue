@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import BasePageHeader from "../components/common/BasePageHeader.vue";
 import Card from "../components/common/Card.vue";
-const { t } = useI18n()
+const { t } = useI18n() 
 
 useHead({
   title: t('meta.home_title'),
@@ -18,7 +18,7 @@ useHead({
 </script>
 
 <template>
-  <div class="container">
+  <div class="container"> 
     <BasePageHeader
       :title="$t('home.page_title')"
       :subtitle="$t('home.page_subtitle')"
