@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "terms_of_use": "Términos de uso",
+    "about_us": "Sobre nosotros",
+    "education": "Educación",
+    "partners": "Socios",
+    "faq": "Preguntas frecuentes",
+    "login": "Iniciar sesión",
+    "register": "Registrarse"
+  },
+  "login": {
+    "page_title": "Inicia sesión en tu cuenta",
+    "page_subtitle": "Introduce tus datos de inicio de sesión para acceder a tu área de cliente.",
+    "title": "Inicio de sesión",
+    "email_label": "Correo electrónico",
+    "email_placeholder": "example-email.com",
+    "password_label": "Contraseña",
+    "password_placeholder": "•••••••••••••",
+    "continue_button": "Continuar",
+    "forgot_password": "¿Olvidaste tu contraseña?",
+    "no_account_title": "¿Aún no tienes una cuenta?",
+    "register_link": "Registrarse"
+  },
+  "footer": {
+    "follow_us": "Síguenos:",
+    "payment_methods": "Métodos\nde pago:",
+    "contact": "Contacto:",
+    "home": "Inicio",
+    "terms_of_use": "Términos de uso",
+    "trading_conditions": "Condiciones de negociación",
+    "careers": "Carreras",
+    "about_us": "Sobre nosotros",
+    "contact_link": "Contacto",
+    "blog": "Blog",
+    "education": "Educación",
+    "trading_basics": "Glosario y conceptos básicos de trading",
+    "partners": "Socios",
+    "affiliates": "Afiliados",
+    "faq": "Preguntas frecuentes",
+    "brand_kit": "Kit de marca",
+    "disclaimer_1": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+    "disclaimer_2": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+    "terms_conditions": "Términos y condiciones",
+    "privacy_policy": "Política de privacidad",
+    "cookie_disclosure": "Divulgación de cookies"
+  },
+  "home": {
+    "page_title": "24 Markets ofrece comercio en CFD",
+    "page_subtitle": "24 Markets ofrece plataformas confiables para web y móvil con hasta 2000 activos."
+  },
+  "meta": {
+  "login_title": "Iniciar sesión | 24 Markets",
+  "login_description": "Accede a tu cuenta de 24 Markets para comenzar a operar con más de 2000 CFDs.",
+  "home_title": "Opera CFDs con 24 Markets",
+  "home_description": "24 Markets ofrece plataformas confiables para operar más de 2000 CFDs en la web y el móvil."
+}
+}

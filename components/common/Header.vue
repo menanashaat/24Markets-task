@@ -1,30 +1,29 @@
 <template>
   <nav class="navbar">
-    <div class="navbar__container">
+    <div class="navbar__container"> 
       <div class="navbar__logo"><img src="/logo.svg" /></div>
       <input type="checkbox" id="nav-toggle" class="navbar__toggle-checkbox" />
-      <label for="nav-toggle" class="navbar__burger"  @click="isMobileMenuOpen = !isMobileMenuOpen">
+      <label
+        for="nav-toggle"
+        class="navbar__burger"
+        @click="isMobileMenuOpen = !isMobileMenuOpen"
+      >
         <i class="fas fa-bars"></i>
       </label>
-      <div class="navbar__links navbar__links--background" :class="{ 'is-open': isMobileMenuOpen }">
-        <NuxtLink class="navbar__link" to="/home"
-          >home</NuxtLink
-        >
-        <NuxtLink class="navbar__link"
-          >Tearms of Use</NuxtLink
-        >
-        <NuxtLink class="navbar__link" 
-          >About Us</NuxtLink
-        >
-        <NuxtLink class="navbar__link" 
-          >Education</NuxtLink
-        >
-        <NuxtLink class="navbar__link" 
-          >Partners</NuxtLink
-        >
-        <NuxtLink class="navbar__link" 
-          >FAQ</NuxtLink
-        >
+      <div
+        class="navbar__links navbar__links--background"
+        :class="{ 'is-open': isMobileMenuOpen }"
+      >
+        <NuxtLink class="navbar__link" to="/home">{{
+          $t("navbar.home")
+        }}</NuxtLink>
+        <NuxtLink class="navbar__link">{{
+          $t("navbar.terms_of_use")
+        }}</NuxtLink>
+        <NuxtLink class="navbar__link">{{ $t("navbar.about_us") }}</NuxtLink>
+        <NuxtLink class="navbar__link">{{ $t("navbar.education") }}</NuxtLink>
+        <NuxtLink class="navbar__link">{{ $t("navbar.partners") }}</NuxtLink>
+        <NuxtLink class="navbar__link">{{ $t("navbar.faq") }}</NuxtLink>
       </div>
       <div class="navbar__links" :class="{ 'is-open': isMobileMenuOpen }">
         <div class="lang-dropdown">
@@ -38,10 +37,10 @@
             <i class="fas fa-chevron-down lang-dropdown__arrow"></i>
           </button>
           <ul v-show="isOpen" class="lang-dropdown__menu">
-            <li
+            <NuxtLink
               v-for="lang in languages"
               :key="lang.code"
-              @click="switchTo(lang.code)"
+              :to="switchLocalePath(lang.code)"
               class="lang-dropdown__item horizontal center-v gap-6"
             >
               <NuxtImg
@@ -50,19 +49,15 @@
                 :alt="`flag ${lang.label}`"
               />
               <span>{{ lang.label }}</span>
-            </li>
+            </NuxtLink>
           </ul>
         </div>
-        <NuxtLink 
-          class="navbar__link btn btn--default"
-          
-          to="/"
-          >Login</NuxtLink>
-        <NuxtLink
-          class="navbar__link btn btn--info"
-          to="/"
-          >Register</NuxtLink
-        >
+        <NuxtLink class="navbar__link btn btn--default" to="/">{{
+          $t("navbar.login")
+        }}</NuxtLink>
+        <NuxtLink class="navbar__link btn btn--info" to="/">{{
+          $t("navbar.register")
+        }}</NuxtLink>
       </div>
     </div>
   </nav>
@@ -81,7 +76,7 @@ const switchLocalePath = useSwitchLocalePath();
 
 // Use a ref for the current locale
 const currentLocale = ref(locale.value);
-const isMobileMenuOpen = ref(false)
+const isMobileMenuOpen = ref(false);
 
 interface LanguageOption {
   code: string;
@@ -97,10 +92,11 @@ const toggleDropdown = () => {
 
 const switchTo = (lang: string) => {
   isOpen.value = false;
+  
   if (locale.value !== lang) {
     const path = switchLocalePath(lang);
     locale.value = lang;
-    if (path) router.push(path);
+    if (path) router.push(path); 
   }
 };
 
@@ -144,9 +140,9 @@ const updateLanguage = async () => {
 .navbar {
   background-color: $color-background;
   position: fixed;
-      z-index: 2;
+  z-index: 2;
   width: 100%;
-      padding: 20px 0;
+  padding: 20px 0;
 
   &__container {
     margin: 0 50px;
@@ -215,37 +211,37 @@ const updateLanguage = async () => {
       background-color: $color-purple-hover;
     }
   }
- 
+
   @media (max-width: 768px) {
-   .navbar__burger {
-    display: block;
-    position: absolute;
-    top: .5rem;
-    right: 1rem;
-    z-index: 20; // Make sure it's on top of the menu
-  }
+    .navbar__burger {
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      z-index: 20; // Make sure it's on top of the menu
+    }
 
-  .navbar__container {
-    position: relative;
-  }
+    .navbar__container {
+      position: relative;
+    }
 
-  .navbar__container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .navbar__links,
-  .navbar__links--background {
-    width: 100%;
-    display: none; // 👈 Hide by default on mobile
-
-    &.is-open {
-      display: flex; // 👈 Show only when is-open is true
+    .navbar__container {
       flex-direction: column;
-      gap: 10px;
-      padding: 10px 0;
+      align-items: stretch;
+    }
+
+    .navbar__links,
+    .navbar__links--background {
+      width: 100%;
+      display: none; // 👈 Hide by default on mobile
+
+      &.is-open {
+        display: flex; // 👈 Show only when is-open is true
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+      }
     }
   }
-}
 }
 </style>

@@ -1,18 +1,17 @@
 <script setup>
-import Header from '../components/common/Header.vue'
-import Footer from '../components/common/Footer.vue'
+import Header from "../components/common/Header.vue";
+import Footer from "../components/common/Footer.vue";
 const { locale } = useI18n();
 </script>
 
 <template>
- <div :dir="locale === 'ar' ? 'rtl' : 'ltr'"> 
-    <Header /> 
+  <div :dir="locale === 'ar' ? 'rtl' : 'ltr'">
+    <Header />
     <slot />
     <Footer />
   </div>
 </template>
 <style>
-
 /* Add RTL support */
 [dir="rtl"] .form-box__button i,
 [dir="rtl"] .register__button i {
@@ -26,4 +25,3 @@ const { locale } = useI18n();
   direction: rtl;
 }
 </style>
-

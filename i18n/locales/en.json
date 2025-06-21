@@ -1,13 +1,58 @@
 {
-  "welcome": "Welcome 😊 sada",
-  "home": "Home",
-  "sign_in": "Sign in to your account",
-  "enter_details": "Please enter your login details below to access your client area.",
-  "login": "Login",
-  "email": "Email",
-  "password": "Password", 
-  "continue": "Continue",
-  "forgot_password": "Forgot password?",
-  "no_account": "Do not have an Account yet?",
-  "register": "Register"
+  "navbar": {
+    "home": "Home",
+    "terms_of_use": "Terms of Use",
+    "about_us": "About Us",
+    "education": "Education",
+    "partners": "Partners",
+    "faq": "FAQ",
+    "login": "Login",
+    "register": "Register"
+  },
+  "login": {
+    "page_title": "Sign in to your account",
+    "page_subtitle": "Please enter your login details below to access your client area.",
+    "title": "Login",
+    "email_label": "Email",
+    "email_placeholder": "exampleemail.com",
+    "password_label": "Password",
+    "password_placeholder": "•••••••••••••",
+    "continue_button": "Continue",
+    "forgot_password": "Forgot password?",
+    "no_account_title": "Do not have an Account yet?",
+    "register_link": "Register"
+  },
+  "footer": {
+    "follow_us": "Follow us:",
+    "payment_methods": "Payment\nMethods:",
+    "contact": "Contact:",
+    "home": "Home",
+    "terms_of_use": "Terms of Use",
+    "trading_conditions": "Trading Conditions",
+    "careers": "Careers",
+    "about_us": "About Us",
+    "contact_link": "Contact",
+    "blog": "Blog",
+    "education": "Education",
+    "trading_basics": "Glasary Trading Basics",
+    "partners": "Partners",
+    "affiliates": "Affiliates",
+    "faq": "FAQ",
+    "brand_kit": "Brand Kit",
+    "disclaimer_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+    "disclaimer_2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+    "terms_conditions": "Terms and Conditions",
+    "privacy_policy": "Privacy Policy",
+    "cookie_disclosure": "Cookie Disclosure"
+  },
+  "home": {
+    "page_title": "24 Markets provides trading in CFD",
+    "page_subtitle": "24 Markets provides trading in CFDs by offering reliable platforms for web and mobile with up to 2000 assets."
+  },
+  "meta": {
+    "login_title": "Login | 24 Markets",
+    "login_description": "Access your 24 Markets account to start trading CFDs on over 2000 assets.",
+    "home_title": "Trade CFDs with 24 Markets",
+    "home_description": "24 Markets offers reliable web and mobile platforms to trade over 2000 CFDs across global markets."
+  }
 }

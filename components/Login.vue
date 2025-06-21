@@ -8,49 +8,46 @@ const showPassword = ref(false);
 <template>
   <div class="container">
     <BasePageHeader
-      title="Sign in to your account"
-      subtitle="Please enter your login details below to access your client area."
+      :title="$t('login.page_title')"
+      :subtitle="$t('login.page_subtitle')"
     />
     <div class="login">
       <!-- login -->
       <Card>
-        <h2 class="login__title">Login</h2>
+        <h2 class="login__title">{{ $t('login.title') }}</h2>
         <form class="login__form">
           <div class="login__field">
             <div class="login__group">
-              <label for="email" class="login__label">Email</label>
+              <label for="email" class="login__label">{{ $t('login.email_label') }}</label>
               <input
                 id="email"
                 type="email"
                 name="email"
                 required
                 class="login__input"
-                placeholder="example@email.com"
+                :placeholder="$t('login.email_placeholder')"
               />
             </div>
           </div>
 
           <div class="login__field">
             <div class="login__group">
-              <span class="login__label">Password</span>
+              <span class="login__label">{{ $t('login.password_label') }}</span>
               <input
                 id="password"
                 :type="showPassword ? 'text' : 'password'"
                 name="password"
                 required
                 class="login__input"
-                placeholder="•••••••••••••"
+                :placeholder="$t('login.password_placeholder')"
               />
               <button
                 type="button"
                 class="login__toggle-password"
                 @click="showPassword = !showPassword"
               >
-                <!-- Show and hide Password -->
                 <i
-                  :class="
-                    showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'
-                  "
+                  :class="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'"
                 ></i>
               </button>
             </div>
@@ -58,26 +55,27 @@ const showPassword = ref(false);
 
           <div class="login__actions">
             <button type="button" class="login__submit">
-              <span class="login__submit-text">Continue</span>
+              <span class="login__submit-text">{{ $t('login.continue_button') }}</span>
               <i class="fa-solid fa-arrow-right login__submit-icon"></i>
             </button>
           </div>
 
           <div class="login__forgot">
-            <NuxtLink
-              class="login__forgot-link"
-            >
-              Forgot password?
+            <NuxtLink class="login__forgot-link">
+              {{ $t('login.forgot_password') }}
             </NuxtLink>
           </div>
         </form>
       </Card>
+
       <!-- register -->
       <Card>
         <div class="login__prompt">
-          <h2 class="login__prompt-title">Do not have an Account yet?</h2>
+          <h2 class="login__prompt-title">{{ $t('login.no_account_title') }}</h2>
           <div class="login__prompt-action">
-            <NuxtLink to="" class="login__register-link"> Register </NuxtLink>
+            <NuxtLink to="" class="login__register-link">
+              {{ $t('login.register_link') }}
+            </NuxtLink>
             <i class="fa-solid fa-arrow-right login__register-icon"></i>
           </div>
         </div>
@@ -85,6 +83,7 @@ const showPassword = ref(false);
     </div>
   </div>
 </template>
+
 
 <style lang="scss">
 @import "../assets/scss/variables";
@@ -103,7 +102,7 @@ const showPassword = ref(false);
   margin: 1rem;
 
   &__title {
-    font-size: 2.25rem; // text-4xl
+    font-size: 2.25rem; 
     font-weight: bold;
     letter-spacing: -0.015em;
     color: $color-white;

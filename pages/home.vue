@@ -1,24 +1,38 @@
 <script setup lang="ts">
 import BasePageHeader from "../components/common/BasePageHeader.vue";
 import Card from "../components/common/Card.vue";
+const { t } = useI18n()
+
+useHead({
+  title: t('meta.home_title'),
+  meta: [
+    { name: 'description', content: t('meta.home_description') },
+    { property: 'og:title', content: t('meta.home_title') },
+    { property: 'og:description', content: t('meta.home_description') },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:image', content: '/og/home.jpg' },
+    { property: 'og:url', content: 'https://24markets.com/home' },
+    { name: 'twitter:card', content: 'summary_large_image' }
+  ]
+})
 </script>
 
 <template>
   <div class="container">
     <BasePageHeader
-      title="24 Markets provides trading in CFD"
-      subtitle="24 Markets provides trading in CFDs by offering reliable platforms for web and mobile with up to 2000 assets."
+      :title="$t('home.page_title')"
+      :subtitle="$t('home.page_subtitle')"
     />
     <div class="home">
-      <!-- Home -->
       <Card>
         <div class="home__prompt">
-          <h2 class="home_prompt-title">24 Markets provides trading in CFD</h2>
+          <h2 class="home_prompt-title">{{ $t('home.page_title') }}</h2>
         </div>
       </Card>
     </div>
   </div>
 </template>
+
 
 <style lang="scss">
 @import "../assets/scss/variables";

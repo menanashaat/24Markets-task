@@ -1,5 +1,5 @@
-@import '../variables';
-@import '../colors';
+@import "../variables";
+@import "../colors";
 
 .lang-dropdown {
   position: relative;
@@ -55,13 +55,14 @@
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s ease;
+    text-decoration: none;
 
     &:hover {
       background-color: $color-purple-main;
       color: $color-white;
     }
   }
-  .flag{
+  .flag {
     border-radius: 50%;
     height: 20px;
     -o-object-fit: cover;

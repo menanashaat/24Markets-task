@@ -1,4 +1,7 @@
 export default {
   legacy: false,
-  fallbackLocale: 'en'
+  fallbackLocale: 'en',
+  locale: 'en',
+  availableLocales: ['en', 'ar', 'es', 'it'],
+  messages: {}
 }

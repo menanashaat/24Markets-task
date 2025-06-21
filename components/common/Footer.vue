@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer__container">
-      <!-- Download  Google and play store-->
+      <!-- Download -->
       <div class="footer__top">
         <div class="footer__top-logo">
           <img src="/logo.svg" alt="24funded.com" />
@@ -13,23 +13,23 @@
         </div>
       </div>
 
-      <!-- Social  and Payment Methods-->
+      <!-- Social & Payment -->
       <div class="footer__social-payment">
         <div class="footer__social-payment-follow">
-          <div class="footer__social-payment-follow-label">Follow us:</div>
+          <div class="footer__social-payment-follow-label">{{ $t('footer.follow_us') }}</div>
           <div class="footer__social-payment-follow-icons">
-            <NuxtLink ><i class="fa-brands fa-facebook-f"></i></NuxtLink >
-            <NuxtLink ><i class="fa-brands fa-instagram"></i></NuxtLink >
-            <NuxtLink ><i class="fa-brands fa-discord"></i></NuxtLink >
-            <NuxtLink ><i class="fa-brands fa-linkedin-in"></i></NuxtLink >
-            <NuxtLink ><i class="fa-brands fa-whatsapp"></i></NuxtLink >
-            <NuxtLink ><i class="fa-brands fa-x-twitter"></i></NuxtLink >
+            <NuxtLink><i class="fa-brands fa-facebook-f"></i></NuxtLink>
+            <NuxtLink><i class="fa-brands fa-instagram"></i></NuxtLink>
+            <NuxtLink><i class="fa-brands fa-discord"></i></NuxtLink>
+            <NuxtLink><i class="fa-brands fa-linkedin-in"></i></NuxtLink>
+            <NuxtLink><i class="fa-brands fa-whatsapp"></i></NuxtLink>
+            <NuxtLink><i class="fa-brands fa-x-twitter"></i></NuxtLink>
           </div>
         </div>
-           <!--Payment Methods -->
+
         <div class="footer__social-payment-methods">
           <div class="footer__social-payment-methods-label">
-            Payment <br />Methods:
+            {{ $t('footer.payment_methods') }}
           </div>
           <div class="footer__social-payment-methods-icons">
             <img src="/footer/visa.svg" alt="Visa" />
@@ -44,74 +44,64 @@
         </div>
       </div>
 
-      <!-- support & Nav -->
+      <!-- Contact & Nav -->
       <div class="footer__contact-nav">
         <div class="footer__contact-nav-info">
-          <div
-            class="footer__contact-nav-info-label horizontal center-v gap-10"
-          >
-            <span> Contact: </span>
+          <div class="footer__contact-nav-info-label horizontal center-v gap-10">
+            <span>{{ $t('footer.contact') }}</span>
             <div class="vertical gap-8">
               <span><i class="fa-brands fa-whatsapp"></i> WhatsApp</span>
               <span><i class="fa-solid fa-phone"></i> +20 2236266</span>
-              <span
-                ><i class="fa-solid fa-headset"></i> support@24funded.com</span
-              >
+              <span><i class="fa-solid fa-headset"></i> support@24funded.com</span>
             </div>
           </div>
         </div>
         <div class="footer__contact-nav-links">
-          <div><NuxtLink  >Home</NuxtLink ></div>
+          <div><NuxtLink>{{ $t('footer.home') }}</NuxtLink></div>
           <div>
-            <div>Terms of Use</div>
-            <NuxtLink  class="sublink" >Trading Conditions</NuxtLink >
-            <NuxtLink  class="sublink" >Careers</NuxtLink >
+            <div>{{ $t('footer.terms_of_use') }}</div>
+            <NuxtLink class="sublink">{{ $t('footer.trading_conditions') }}</NuxtLink>
+            <NuxtLink class="sublink">{{ $t('footer.careers') }}</NuxtLink>
           </div>
           <div>
-            <NuxtLink  >About Us</NuxtLink >
-            <NuxtLink  class="sublink" >Contact</NuxtLink >
-            <NuxtLink  class="sublink" >Blog</NuxtLink >
+            <NuxtLink>{{ $t('footer.about_us') }}</NuxtLink>
+            <NuxtLink class="sublink">{{ $t('footer.contact_link') }}</NuxtLink>
+            <NuxtLink class="sublink">{{ $t('footer.blog') }}</NuxtLink>
           </div>
           <div>
-            <div>Education</div>
-            <NuxtLink  class="sublink">Glasary Trading Basics</NuxtLink >
+            <div>{{ $t('footer.education') }}</div>
+            <NuxtLink class="sublink">{{ $t('footer.trading_basics') }}</NuxtLink>
           </div>
           <div>
-            <NuxtLink >Partners</NuxtLink >
-            <NuxtLink  class="sublink" >Affiliates</NuxtLink >
+            <NuxtLink>{{ $t('footer.partners') }}</NuxtLink>
+            <NuxtLink class="sublink">{{ $t('footer.affiliates') }}</NuxtLink>
           </div>
           <div>
-            <div>FAQ</div>
-            <NuxtLink  class="sublink" >Brand Kit</NuxtLink >
+            <div>{{ $t('footer.faq') }}</div>
+            <NuxtLink class="sublink">{{ $t('footer.brand_kit') }}</NuxtLink>
           </div>
         </div>
       </div>
-
+ 
       <!-- Disclaimer -->
       <div class="footer__disclaimer">
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-        </p>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-        </p>
+        <p>{{ $t('footer.disclaimer_1') }}</p>
+        <p>{{ $t('footer.disclaimer_2') }}</p>
       </div>
 
-      <!-- Terms & Conditions -->
+      <!-- Bottom -->
       <div class="footer__bottom">
         <div>&copy; 2025 - 24funded.com</div>
         <div class="footer__bottom-links">
-          <NuxtLink 
-            target="_blank"
-            >Terms and Conditions</NuxtLink 
-          >
-          <NuxtLink  >Privacy policy</NuxtLink >
-          <NuxtLink  >Cookie Disclosure</NuxtLink >
+          <NuxtLink target="_blank">{{ $t('footer.terms_conditions') }}</NuxtLink>
+          <NuxtLink>{{ $t('footer.privacy_policy') }}</NuxtLink>
+          <NuxtLink>{{ $t('footer.cookie_disclosure') }}</NuxtLink>
         </div>
       </div>
     </div>
   </footer>
 </template>
+
 
 <script setup lang="ts">
 // No special script logic needed for static footer

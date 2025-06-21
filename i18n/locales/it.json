@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Home",
+    "terms_of_use": "Termini di utilizzo",
+    "about_us": "Chi siamo",
+    "education": "Formazione",
+    "partners": "Partner",
+    "faq": "Domande frequenti",
+    "login": "Accedi",
+    "register": "Registrati"
+  },
+  "login": {
+    "page_title": "Accedi al tuo account",
+    "page_subtitle": "Inserisci i tuoi dati di accesso qui sotto per accedere all'area clienti.",
+    "title": "Accesso",
+    "email_label": "Email",
+    "email_placeholder": "example-email.com",
+    "password_label": "Password",
+    "password_placeholder": "•••••••••••••",
+    "continue_button": "Continua",
+    "forgot_password": "Password dimenticata?",
+    "no_account_title": "Non hai ancora un account?",
+    "register_link": "Registrati"
+  },
+  "footer": {
+    "follow_us": "Seguici:",
+    "payment_methods": "Metodi\ndi pagamento:",
+    "contact": "Contatti:",
+    "home": "Home",
+    "terms_of_use": "Termini di utilizzo",
+    "trading_conditions": "Condizioni di trading",
+    "careers": "Carriere",
+    "about_us": "Chi siamo",
+    "contact_link": "Contatto",
+    "blog": "Blog",
+    "education": "Formazione",
+    "trading_basics": "Glossario e nozioni di base sul trading",
+    "partners": "Partner",
+    "affiliates": "Affiliati",
+    "faq": "Domande frequenti",
+    "brand_kit": "Kit del marchio",
+    "disclaimer_1": "Lorem Ipsum è semplicemente un testo fittizio dell'industria della stampa e della composizione.",
+    "disclaimer_2": "Lorem Ipsum è semplicemente un testo fittizio dell'industria della stampa e della composizione.",
+    "terms_conditions": "Termini e condizioni",
+    "privacy_policy": "Politica sulla privacy",
+    "cookie_disclosure": "Informativa sui cookie"
+  },
+  "home": {
+    "page_title": "24 Markets offre trading in CFD",
+    "page_subtitle": "24 Markets offre piattaforme affidabili per il web e mobile con fino a 2000 asset."
+  },
+  "meta": {
+    "login_title": "Accedi | 24 Markets",
+    "login_description": "Accedi al tuo account 24 Markets per iniziare a fare trading su oltre 2000 CFD.",
+    "home_title": "Fai trading su CFD con 24 Markets",
+    "home_description": "24 Markets offre piattaforme affidabili per il trading di oltre 2000 CFD su web e dispositivi mobili."
+  }
+}

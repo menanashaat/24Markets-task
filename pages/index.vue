@@ -1,17 +1,15 @@
 <script setup>
- import Login from '../components/Login.vue'
-const { locale } = useI18n()
-const router = useRouter()
+import Login from "../components/Login.vue";
+const { t } = useI18n();
 
-// onMounted(() => {
-//   router.replace(`/${locale.value}/login`)
-// })
+useHead({
+  title: t("meta.login_title"),
+  meta: [{ name: "description", content: t("meta.login_description") }],
+});
 </script>
 
 <template>
-  
-   <Login />
-    
+  <Login />
 </template>
 
 <style>
@@ -36,6 +34,8 @@ const router = useRouter()
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
